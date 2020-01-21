@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93945F2A4BB7188F822EE429 /* Pods_myDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; };
 		C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFB23D60701009736CD /* AppDelegate.swift */; };
 		C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFD23D60701009736CD /* SceneDelegate.swift */; };
 		C76FDC0023D60701009736CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFF23D60701009736CD /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		C76FDC0B23D60706009736CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC0923D60706009736CD /* LaunchScreen.storyboard */; };
 		C76FDC1623D60707009736CD /* myDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDC1523D60707009736CD /* myDictionaryTests.swift */; };
 		C76FDC2123D60707009736CD /* myDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDC2023D60707009736CD /* myDictionaryUITests.swift */; };
+		C76FDC2F23D60816009736CD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC2E23D60816009736CD /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
+		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76FDBF823D60701009736CD /* myDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76FDBFB23D60701009736CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C76FDBFD23D60701009736CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		C76FDC1C23D60707009736CD /* myDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76FDC2023D60707009736CD /* myDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDictionaryUITests.swift; sourceTree = "<group>"; };
 		C76FDC2223D60707009736CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C76FDC2E23D60816009736CD /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F482C8C057BAA975BCFF59E2 /* Pods-myDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.debug.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93945F2A4BB7188F822EE429 /* Pods_myDictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +85,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47AED3EB22CA27A06AD30FDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F482C8C057BAA975BCFF59E2 /* Pods-myDictionary.debug.xcconfig */,
+				21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC51629D9E1AFF7DC89358D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C76FDBEF23D60701009736CD = {
 			isa = PBXGroup;
 			children = (
+				C76FDC2E23D60816009736CD /* Podfile */,
 				C76FDBFA23D60701009736CD /* myDictionary */,
 				C76FDC1423D60707009736CD /* myDictionaryTests */,
 				C76FDC1F23D60707009736CD /* myDictionaryUITests */,
 				C76FDBF923D60701009736CD /* Products */,
+				47AED3EB22CA27A06AD30FDD /* Pods */,
+				AC51629D9E1AFF7DC89358D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C76FDC2523D60707009736CD /* Build configuration list for PBXNativeTarget "myDictionary" */;
 			buildPhases = (
+				8BD2C4324100862B20807C49 /* [CP] Check Pods Manifest.lock */,
 				C76FDBF423D60701009736CD /* Sources */,
 				C76FDBF523D60701009736CD /* Frameworks */,
 				C76FDBF623D60701009736CD /* Resources */,
+				65F4F6F7DD8C42B9C80EE708 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +266,7 @@
 			files = (
 				C76FDC0B23D60706009736CD /* LaunchScreen.storyboard in Resources */,
 				C76FDC0823D60706009736CD /* Assets.xcassets in Resources */,
+				C76FDC2F23D60816009736CD /* Podfile in Resources */,
 				C76FDC0323D60701009736CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +286,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65F4F6F7DD8C42B9C80EE708 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myDictionary/Pods-myDictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myDictionary/Pods-myDictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myDictionary/Pods-myDictionary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD2C4324100862B20807C49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myDictionary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C76FDBF423D60701009736CD /* Sources */ = {
@@ -436,6 +508,7 @@
 		};
 		C76FDC2623D60707009736CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F482C8C057BAA975BCFF59E2 /* Pods-myDictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +527,7 @@
 		};
 		C76FDC2723D60707009736CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +549,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = myDictionaryTests/Info.plist;
@@ -497,6 +572,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = myDictionaryTests/Info.plist;

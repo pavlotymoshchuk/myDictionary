@@ -7,12 +7,28 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+import Alamofire
+import SwiftyJSON
+class ViewController: UIViewController
+{
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").response { response in
+//            debugPrint(response)
+//        }
+        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").responseJSON { response in
+            switch response.result
+            {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+            case .failure(let error):
+                print("ERROR", error.localizedDescription)
+            }
+        }
+        
     }
 
 
