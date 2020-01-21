@@ -15,10 +15,10 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").response { response in
-//            debugPrint(response)
-//        }
-        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").responseJSON { response in
+        
+        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").responseJSON
+        {
+            response in
             switch response.result
             {
             case .success(let value):
