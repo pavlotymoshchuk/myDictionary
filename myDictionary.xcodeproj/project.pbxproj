@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93945F2A4BB7188F822EE429 /* Pods_myDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; };
+		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
 		C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFB23D60701009736CD /* AppDelegate.swift */; };
 		C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFD23D60701009736CD /* SceneDelegate.swift */; };
 		C76FDC0323D60701009736CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC0123D60701009736CD /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myDictionary.entitlements; sourceTree = "<group>"; };
+		C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C76FDBF823D60701009736CD /* myDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76FDBFB23D60701009736CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C76FDBFD23D60701009736CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				C76FDBFB23D60701009736CD /* AppDelegate.swift */,
 				C76FDBFD23D60701009736CD /* SceneDelegate.swift */,
 				C7BC760523DCC25600B626C1 /* TableViewController.swift */,
+				C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */,
 				C76FDC0123D60701009736CD /* Main.storyboard */,
 				C76FDC0723D60706009736CD /* Assets.xcassets */,
 				C76FDC0923D60706009736CD /* LaunchScreen.storyboard */,
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */,
 				C76FDC0623D60701009736CD /* myDictionary.xcdatamodeld in Sources */,
 				C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */,
 				C7BC760623DCC25600B626C1 /* TableViewController.swift in Sources */,
