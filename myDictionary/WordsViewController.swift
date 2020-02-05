@@ -11,22 +11,65 @@ import Alamofire
 import SwiftyJSON
 import UserNotifications
 
-class TableViewController: UITableViewController {
+class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableWords: UITableView!
+    
+    //MARK: - Refresh
     var refresh = UIRefreshControl()
     
     
     @objc func handleRefresh()
     {
         gettingJSON()
-        self.tableView.reloadData()
+        self.tableWords.reloadData()
         refresh.endRefreshing()
     }
+    
+    //MARK: - Notification
+    func scheduleNotification(notificationRepeat: TimeInterval)
+    {
+        removeNotification(withIdent: ["Massage"])
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Learn new word"
+        var randomWord = Words()
+        repeat
+        {
+            randomWord = wordsArray.randomElement()!
+        }
+        while randomWord.studied
+        
+        content.body = randomWord.word + " - " + randomWord.translate[0]
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        var date = DateComponents()
+        date.minute = 5
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "Massage", content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+    }
+    
+    func removeNotification (withIdent ident: [String])
+    {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: ident)
+    }
+    
+    deinit {
+        removeNotification(withIdent: ["Massage"])
+    }
+    
+    
     
     //MARK: - Отримання JSON
     func gettingJSON(){
         wordsArray.removeAll()
-        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/words.json").responseJSON {
+        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").responseJSON {
             response in
             switch response.result {
                 case .success(let value):
@@ -47,35 +90,15 @@ class TableViewController: UITableViewController {
                     }
                     if wordsArray.count > 0
                     {
-                        self.tableView.reloadData()
+                        self.tableWords.reloadData()
                     }
                 case .failure(let error):
                     print("ERROR", error.localizedDescription)
             }
-            var jsonString = ""
-            jsonString += "[" + "\n"
-            if wordsArray.count > 0
-            {
-            for i in 0 ..< wordsArray.count
-                {
-                    jsonString += "{" + "\n" + "\u{0022}" + "word" + "\u{0022}" + ":" + "\u{0022}" + wordsArray[i].word + "\u{0022}" + "," + "\n"
-                    jsonString += "\u{0022}" + "translate" + "\u{0022}" + ":" + "["
-                    for j in 0 ..< wordsArray[i].translate.count
-                    {
-                        jsonString += "\u{0022}" + wordsArray[i].translate[j] + "\u{0022}" + ","
-                    }
-                    jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-                    jsonString += "]" + "," + "\n"
-                    jsonString += "\u{0022}" + "studied" + "\u{0022}" + ":" + String(wordsArray[i].studied) + "\n" + "}" + "," + "\n"
-                }
-            }
-            jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-            jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-            jsonString += "\n" + "]"
-            print(jsonString)
         }
     }
     
+    //MARK: - Перестворення JSON
     func creatingJSON()
     {
         var jsonString = ""
@@ -100,26 +123,38 @@ class TableViewController: UITableViewController {
         jsonString += "\n" + "]"
         print(jsonString)
     }
+
     
-//    let searchController = UISearchController(searchResultsController: nil)
-    
+    //MARK: - viewDidLoad()
     override func viewDidLoad()
     {
         super.viewDidLoad()
         gettingJSON()
-        self.refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        view.addSubview(refresh)
+        refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        
+        tableWords.addSubview(refresh)
+        
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        //MARK: - Notification
+        if wordsArray.count > 0
+        {
+            self.scheduleNotification(notificationRepeat: 10)
+            print("Notification created")
+        }
+        else
+        {
+            print("Array is empty")
+        }
         return wordsArray.count
     }
 
     // MARK: - Заповнення рядків
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? TableViewCell
         {
             let item = wordsArray[indexPath.row]
             cell.wordLabel?.text = item.word

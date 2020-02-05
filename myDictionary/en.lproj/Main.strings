@@ -1,0 +1,30 @@
+
+/* Class = "UITextField"; placeholder = "Word"; ObjectID = "2xN-wR-GgR"; */
+"2xN-wR-GgR.placeholder" = "Word";
+
+/* Class = "UILabel"; text = "Translate"; ObjectID = "8ae-0s-6Me"; */
+"8ae-0s-6Me.text" = "Translate";
+
+/* Class = "UIButton"; normalTitle = "ADD"; ObjectID = "BRs-MP-L85"; */
+"BRs-MP-L85.normalTitle" = "ADD";
+
+/* Class = "UILabel"; text = "Num"; ObjectID = "IWV-6W-zSb"; */
+"IWV-6W-zSb.text" = "Num";
+
+/* Class = "UILabel"; text = "Add a new word"; ObjectID = "NL2-Ns-8Uk"; */
+"NL2-Ns-8Uk.text" = "Add a new word";
+
+/* Class = "UIButton"; normalTitle = " New"; ObjectID = "OZv-L0-Hsd"; */
+"OZv-L0-Hsd.normalTitle" = " New";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "RMV-AR-qQ0"; */
+"RMV-AR-qQ0.normalTitle" = "Settings";
+
+/* Class = "UITextField"; placeholder = "Translate"; ObjectID = "RiA-br-8em"; */
+"RiA-br-8em.placeholder" = "Translate";
+
+/* Class = "UILabel"; text = "Word"; ObjectID = "cU9-26-EWF"; */
+"cU9-26-EWF.text" = "Word";
+
+/* Class = "UILabel"; text = "Words"; ObjectID = "cly-oR-pkZ"; */
+"cly-oR-pkZ.text" = "Words";

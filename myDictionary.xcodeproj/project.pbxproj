@@ -19,7 +19,8 @@
 		C76FDC2123D60707009736CD /* myDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDC2023D60707009736CD /* myDictionaryUITests.swift */; };
 		C76FDC2F23D60816009736CD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC2E23D60816009736CD /* Podfile */; };
 		C7B6FC6423E7325200B179C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */; };
-		C7BC760623DCC25600B626C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BC760523DCC25600B626C1 /* TableViewController.swift */; };
+		C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */; };
+		C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,8 @@
 		C76FDC2223D60707009736CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C76FDC2E23D60816009736CD /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		C7BC760523DCC25600B626C1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
+		C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		F482C8C057BAA975BCFF59E2 /* Pods-myDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.debug.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,11 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */,
-				C76FDBFB23D60701009736CD /* AppDelegate.swift */,
 				C76FDBFD23D60701009736CD /* SceneDelegate.swift */,
-				C7BC760523DCC25600B626C1 /* TableViewController.swift */,
+				C76FDBFB23D60701009736CD /* AppDelegate.swift */,
+				C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */,
 				C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */,
 				C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */,
+				C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */,
 				C76FDC0123D60701009736CD /* Main.storyboard */,
 				C76FDC0723D60706009736CD /* Assets.xcassets */,
 				C76FDC0923D60706009736CD /* LaunchScreen.storyboard */,
@@ -344,8 +347,9 @@
 			files = (
 				C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */,
 				C76FDC0623D60701009736CD /* myDictionary.xcdatamodeld in Sources */,
+				C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */,
 				C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */,
-				C7BC760623DCC25600B626C1 /* TableViewController.swift in Sources */,
+				C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */,
 				C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */,
 				C7B6FC6423E7325200B179C0 /* SettingsViewController.swift in Sources */,
 			);
