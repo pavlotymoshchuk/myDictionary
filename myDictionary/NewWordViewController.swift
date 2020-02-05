@@ -36,10 +36,8 @@ class NewWordViewController: UIViewController,UITextFieldDelegate
         wordsArray.append(newWord)
         print(newWord.word,newWord.translate)
         
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController")
-        self.present(vc, animated: true, completion: nil)
+        //MARK: - відміна відкриття в'ю контролера
+        dismiss(animated: true, completion: nil)
     }
     
     

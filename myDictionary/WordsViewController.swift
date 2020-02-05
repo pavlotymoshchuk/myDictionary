@@ -125,6 +125,37 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     
+    
+    @IBAction func newWordButton(_ sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "NewWordViewController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    @IBAction func settingsButton(_ sender: UIButton)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func randomWord(_ sender: UIButton)
+    {
+        let showRandomWord = UIAlertController()
+        showRandomWord.title = "Random word:"
+        var randomWord = Words()
+        repeat
+        {
+            randomWord = wordsArray.randomElement()!
+        }
+        while randomWord.studied
+        showRandomWord.message = randomWord.word + " - " + randomWord.translate[0]
+        let action = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in }
+        showRandomWord.addAction(action)
+        self.present(showRandomWord, animated: true, completion: nil)
+    }
+    
+    
     //MARK: - viewDidLoad()
     override func viewDidLoad()
     {
@@ -136,12 +167,42 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    // MARK: - Sorting Words Array By
+    func sortingWordsArray(sortParam: Int)
+    {
+        var unknownWordsArray: [Words] = []
+        var knownWordsArray: [Words] = []
+        for i in wordsArray {
+            if i.studied {
+                knownWordsArray.append(i)
+            } else {
+                unknownWordsArray.append(i)
+            }
+        }
+        switch sortParam
+        {
+        case 0:
+            wordsArray = unknownWordsArray.sorted {$0.word < $1.word} + knownWordsArray.sorted {$0.word < $1.word}
+        case 1:
+            wordsArray = unknownWordsArray.sorted {$0.translate[0] < $1.translate[0]} + knownWordsArray.sorted {$0.translate[0] < $1.translate[0]}
+        case 2:
+            wordsArray = knownWordsArray.sorted {$0.word < $1.word} + unknownWordsArray.sorted {$0.word < $1.word}
+        case 3:
+            wordsArray = knownWordsArray.sorted {$0.translate[0] < $1.translate[0]} + unknownWordsArray.sorted {$0.translate[0] < $1.translate[0]}
+        default:
+            0
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         //MARK: - Notification
         if wordsArray.count > 0
         {
             self.scheduleNotification(notificationRepeat: 10)
+            // MARK: - Sorting By
+            sortingWordsArray(sortParam: sortParam)
             print("Notification created")
         }
         else

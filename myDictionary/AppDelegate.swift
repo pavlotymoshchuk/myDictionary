@@ -19,6 +19,7 @@ class Words
     var studied: Bool = false
 }
 var wordsArray: [Words] = []
+var sortParam = 0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
