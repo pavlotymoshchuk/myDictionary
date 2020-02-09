@@ -67,31 +67,34 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     //MARK: - Отримання JSON
-    func gettingJSON(){
+    func gettingJSON()
+    {
         wordsArray.removeAll()
-        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/word.json").responseJSON {
+        let url = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordList.json"
+        AF.request(url).responseJSON
+        {
             response in
-            switch response.result {
+            switch response.result
+            {
                 case .success(let value):
-                    let json = JSON(value)
-//                    print(json)
-                    for i in 0 ..< json[].count
+                let json = JSON(value)
+                for i in 0 ..< json[].count
+                {
+                    let curWord = Words()
+                    curWord.word = json[i]["word"].string!
+                    var curTranslatesMas: [String] = []
+                    for j in 0 ..< json[i]["translate"].count
                     {
-                        let curWord = Words()
-                        curWord.word = json[i]["word"].string!
-                        var curTranslatesMas: [String] = []
-                        for j in 0 ..< json[i]["translate"].count
-                        {
-                            curTranslatesMas.append(json[i]["translate"][j].string!)
-                        }
-                        curWord.translate = curTranslatesMas
-                        curWord.studied = json[i]["studied"].bool!
-                        wordsArray.append(curWord)
+                        curTranslatesMas.append(json[i]["translate"][j].string!)
                     }
-                    if wordsArray.count > 0
-                    {
-                        self.tableWords.reloadData()
-                    }
+                    curWord.translate = curTranslatesMas
+                    curWord.studied = json[i]["studied"].bool!
+                    wordsArray.append(curWord)
+                }
+                if wordsArray.count > 0
+                {
+                    self.tableWords.reloadData()
+                }
                 case .failure(let error):
                     print("ERROR", error.localizedDescription)
             }
@@ -167,7 +170,7 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    // MARK: - Sorting Words Array By
+    // MARK: - Sorting Words Array
     func sortingWordsArray(sortParam: Int)
     {
         var unknownWordsArray: [Words] = []
@@ -190,7 +193,7 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case 3:
             wordsArray = knownWordsArray.sorted {$0.translate[0] < $1.translate[0]} + unknownWordsArray.sorted {$0.translate[0] < $1.translate[0]}
         default:
-            0
+            return
         }
         
     }
@@ -207,7 +210,11 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else
         {
-            print("Array is empty")
+            let errorNotification = UIAlertController()
+            errorNotification.title = "Notification create fail:"
+            let action = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in }
+            errorNotification.addAction(action)
+            self.present(errorNotification, animated: true, completion: nil)
         }
         return wordsArray.count
     }
