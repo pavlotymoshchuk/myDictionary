@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93945F2A4BB7188F822EE429 /* Pods_myDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; };
 		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
+		C757403223F57C6C0060296A /* Pods_myDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; };
+		C757403323F57C6C0060296A /* Pods_myDictionary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C766254023EDE7EA00314C94 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = C766253F23EDE7EA00314C94 /* File.json */; };
 		C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFB23D60701009736CD /* AppDelegate.swift */; };
 		C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFD23D60701009736CD /* SceneDelegate.swift */; };
@@ -18,7 +19,6 @@
 		C76FDC0B23D60706009736CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC0923D60706009736CD /* LaunchScreen.storyboard */; };
 		C76FDC1623D60707009736CD /* myDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDC1523D60707009736CD /* myDictionaryTests.swift */; };
 		C76FDC2123D60707009736CD /* myDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDC2023D60707009736CD /* myDictionaryUITests.swift */; };
-		C76FDC2F23D60816009736CD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C76FDC2E23D60816009736CD /* Podfile */; };
 		C7B6FC6423E7325200B179C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */; };
 		C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */; };
 		C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */; };
@@ -41,6 +41,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C757403423F57C6C0060296A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C757403323F57C6C0060296A /* Pods_myDictionary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +75,6 @@
 		C76FDC1C23D60707009736CD /* myDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76FDC2023D60707009736CD /* myDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDictionaryUITests.swift; sourceTree = "<group>"; };
 		C76FDC2223D60707009736CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C76FDC2E23D60816009736CD /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
 		C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93945F2A4BB7188F822EE429 /* Pods_myDictionary.framework in Frameworks */,
+				C757403223F57C6C0060296A /* Pods_myDictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +127,6 @@
 		C76FDBEF23D60701009736CD = {
 			isa = PBXGroup;
 			children = (
-				C76FDC2E23D60816009736CD /* Podfile */,
 				C76FDBFA23D60701009736CD /* myDictionary */,
 				C76FDC1423D60707009736CD /* myDictionaryTests */,
 				C76FDC1F23D60707009736CD /* myDictionaryUITests */,
@@ -137,19 +149,19 @@
 		C76FDBFA23D60701009736CD /* myDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */,
 				C76FDBFD23D60701009736CD /* SceneDelegate.swift */,
 				C76FDBFB23D60701009736CD /* AppDelegate.swift */,
 				C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */,
 				C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */,
 				C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */,
-				C766253F23EDE7EA00314C94 /* File.json */,
 				C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */,
 				C76FDC0123D60701009736CD /* Main.storyboard */,
-				C76FDC0723D60706009736CD /* Assets.xcassets */,
 				C76FDC0923D60706009736CD /* LaunchScreen.storyboard */,
+				C76FDC0723D60706009736CD /* Assets.xcassets */,
 				C76FDC0C23D60706009736CD /* Info.plist */,
 				C76FDC0423D60701009736CD /* myDictionary.xcdatamodeld */,
+				C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */,
+				C766253F23EDE7EA00314C94 /* File.json */,
 			);
 			path = myDictionary;
 			sourceTree = "<group>";
@@ -184,6 +196,7 @@
 				C76FDBF523D60701009736CD /* Frameworks */,
 				C76FDBF623D60701009736CD /* Resources */,
 				65F4F6F7DD8C42B9C80EE708 /* [CP] Embed Pods Frameworks */,
+				C757403423F57C6C0060296A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Павло Тимощук";
 				TargetAttributes = {
 					C76FDBF723D60701009736CD = {
@@ -280,7 +293,6 @@
 			files = (
 				C76FDC0B23D60706009736CD /* LaunchScreen.storyboard in Resources */,
 				C76FDC0823D60706009736CD /* Assets.xcassets in Resources */,
-				C76FDC2F23D60816009736CD /* Podfile in Resources */,
 				C76FDC0323D60701009736CD /* Main.storyboard in Resources */,
 				C766254023EDE7EA00314C94 /* File.json in Resources */,
 			);
@@ -535,6 +547,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = myDictionary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,6 +571,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = myDictionary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

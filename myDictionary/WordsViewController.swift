@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 import UserNotifications
 
-class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
     
     @IBOutlet weak var tableWords: UITableView!
     
@@ -60,7 +61,8 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         center.removePendingNotificationRequests(withIdentifiers: ident)
     }
     
-    deinit {
+    deinit
+    {
         removeNotification(withIdent: ["Massage"])
     }
     
@@ -70,7 +72,7 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func gettingJSON()
     {
         wordsArray.removeAll()
-        let url = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordList.json"
+        let url = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
         AF.request(url).responseJSON
         {
             response in
@@ -175,10 +177,14 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         var unknownWordsArray: [Words] = []
         var knownWordsArray: [Words] = []
-        for i in wordsArray {
-            if i.studied {
+        for i in wordsArray
+        {
+            if i.studied && i.word != nil
+            {
                 knownWordsArray.append(i)
-            } else {
+            }
+            else if i.word != nil
+            {
                 unknownWordsArray.append(i)
             }
         }
@@ -200,21 +206,13 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //MARK: - Notification
         if wordsArray.count > 0
         {
+            //MARK: - Notification
             self.scheduleNotification(notificationRepeat: 10)
             // MARK: - Sorting By
             sortingWordsArray(sortParam: sortParam)
             print("Notification created")
-        }
-        else
-        {
-            let errorNotification = UIAlertController()
-            errorNotification.title = "Notification create fail:"
-            let action = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in }
-            errorNotification.addAction(action)
-            self.present(errorNotification, animated: true, completion: nil)
         }
         return wordsArray.count
     }
