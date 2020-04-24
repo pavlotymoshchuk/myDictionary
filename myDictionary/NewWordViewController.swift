@@ -61,42 +61,6 @@ class NewWordViewController: UIViewController,UITextFieldDelegate
         newWord.translate.append(newTranslateTextField.text!)
         wordsArray.append(newWord)
         print(newWord.word,newWord.translate)
-        
-        // MARK: - TO DO with REST API
-        guard let url = URL(string: "http://pavlo-tymoshchuk-inc.right-k-left.com/wordList.json") else { return }
-        let parameters = ["word": newWord.word, "translate": newWord.translate , "studied" :newWord.studied] as [String : Any]
-        
-//        AF.request("http://pavlo-tymoshchuk-inc.right-k-left.com/wordList.json", method: .post, parameters: parameters).responseJSON { response in
-//                            debugPrint(response)
-//                        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        request.httpBody = httpBody
-
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response
-            {
-                print(response)
-            }
-            print(parameters)
-            guard let data = data else { return }
-            do
-            {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
-            }
-            catch
-            {
-                print(error)
-            }
-        }.resume()
-
-        
         //MARK: - Відміна відкриття view
         dismiss(animated: true, completion: nil)
     }

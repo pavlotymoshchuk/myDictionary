@@ -179,11 +179,11 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var knownWordsArray: [Words] = []
         for i in wordsArray
         {
-            if i.studied && i.word != nil
+            if i.studied && i.word.count != 0
             {
                 knownWordsArray.append(i)
             }
-            else if i.word != nil
+            else if i.word.count != 0
             {
                 unknownWordsArray.append(i)
             }
