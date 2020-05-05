@@ -122,6 +122,9 @@
 		B819B1F3D86B49E0C3D0121454EEBD5A /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		C31254BAA3FFD33BA38224DA869BEB40 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		C757403523F57C7B0060296A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		C7E38B6524618069009D6EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C7E38B6724618069009D6EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7E38B6824618069009D6EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D03197070251E124BBEFE81BEDACED86 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		D052E9F52FDE47ABAD398907DBCFF724 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		D44B88635CD1ABB5BFB44439EDB61899 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +277,16 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
+		C7E38B6924618069009D6EB5 /* MyDictionary WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C7E38B6624618069009D6EB5 /* Interface.storyboard */,
+				C7E38B6724618069009D6EB5 /* Assets.xcassets */,
+				C7E38B6824618069009D6EB5 /* Info.plist */,
+			);
+			path = "MyDictionary WatchKit App";
+			sourceTree = "<group>";
+		};
 		CEA89809072D23C31E6348C93E430AB9 /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +299,7 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
+				C7E38B6924618069009D6EB5 /* MyDictionary WatchKit App */,
 				C757403523F57C7B0060296A /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				71C529FB98A95FF2E1EAA264DBC1CA99 /* Pods */,
@@ -525,6 +539,17 @@
 			targetProxy = 40D83A05743FE1A939C28BD53A271E26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C7E38B6624618069009D6EB5 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7E38B6524618069009D6EB5 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00319A2330DC739FCBFBB6CFB0C5F58D /* Debug */ = {
