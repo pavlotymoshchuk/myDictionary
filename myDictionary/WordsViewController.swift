@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 import UserNotifications
 
 class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
@@ -71,35 +69,19 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //MARK: - Отримання JSON
     func gettingJSON()
     {
-        wordsArray.removeAll()
-        let url = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
-        AF.request(url).responseJSON
-        {
-            response in
-            switch response.result
-            {
-                case .success(let value):
-                let json = JSON(value)
-                for i in 0 ..< json[].count
-                {
-                    let curWord = Words()
-                    curWord.word = json[i]["word"].string!
-                    var curTranslatesMas: [String] = []
-                    for j in 0 ..< json[i]["translate"].count
-                    {
-                        curTranslatesMas.append(json[i]["translate"][j].string!)
+        let urlString = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
+        if let url = URL(string: urlString) {
+            URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                if let data = data {
+                    do {
+                        wordsArray = try JSONDecoder().decode([Words].self, from: data)
+                        print(wordsArray)
+                    } catch let error {
+                        print(error)
                     }
-                    curWord.translate = curTranslatesMas
-                    curWord.studied = json[i]["studied"].bool!
-                    wordsArray.append(curWord)
                 }
-                if wordsArray.count > 0
-                {
-                    self.tableWords.reloadData()
-                }
-                case .failure(let error):
-                    print("ERROR", error.localizedDescription)
-            }
+            }.resume()
         }
     }
     
@@ -167,9 +149,7 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         gettingJSON()
         refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        
         tableWords.addSubview(refresh)
-        
     }
     
     // MARK: - Sorting Words Array

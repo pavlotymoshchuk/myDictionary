@@ -8,11 +8,9 @@
 
 import UIKit
 import CoreData
-import Alamofire
-import SwiftyJSON
 import UserNotifications
 
-class Words
+struct Words: Decodable
 {
     var word: String = ""
     var translate: [String] = []

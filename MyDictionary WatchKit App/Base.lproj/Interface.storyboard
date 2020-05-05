@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42"/>
+    <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
@@ -9,9 +9,37 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyDictionary_WatchKit_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyDictionary_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="eGU-uj-sR4">
+                            <items>
+                                <tableRow identifier="RowController" id="qIO-m3-PcT" customClass="RowController" customModule="MyDictionary_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="80" alignment="left" id="nOW-mb-Xeb">
+                                        <items>
+                                            <label width="40" alignment="left" verticalAlignment="center" text="Num" numberOfLines="0" id="TZK-xv-nVR"/>
+                                            <group alignment="center" verticalAlignment="center" layout="vertical" id="otr-zF-T5y">
+                                                <items>
+                                                    <label height="20" alignment="left" text="Word" numberOfLines="0" id="Vzu-Um-SHP"/>
+                                                    <label alignment="left" verticalAlignment="bottom" text="Translate" textAlignment="center" numberOfLines="0" id="7OS-Xx-hQa"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="num" destination="TZK-xv-nVR" id="ZrC-Cq-Wfc"/>
+                                        <outlet property="translate" destination="7OS-Xx-hQa" id="nPY-HT-qCw"/>
+                                        <outlet property="word" destination="Vzu-Um-SHP" id="d1a-nc-de3"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="eGU-uj-sR4" id="27Y-cQ-2ZL"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219.95061728395061" y="344.31472081218271"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

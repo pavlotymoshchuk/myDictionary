@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
-		C757403223F57C6C0060296A /* Pods_myDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; };
-		C757403323F57C6C0060296A /* Pods_myDictionary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C766254023EDE7EA00314C94 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = C766253F23EDE7EA00314C94 /* File.json */; };
 		C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFB23D60701009736CD /* AppDelegate.swift */; };
 		C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFD23D60701009736CD /* SceneDelegate.swift */; };
@@ -22,6 +20,7 @@
 		C7B6FC6423E7325200B179C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */; };
 		C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */; };
 		C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */; };
+		C7DD5B422461A743002E9286 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DD5B412461A743002E9286 /* RowController.swift */; };
 		C7E38B3D2461803E009D6EB5 /* MyDictionary WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7E38B432461803E009D6EB5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E38B412461803E009D6EB5 /* Interface.storyboard */; };
 		C7E38B4524618042009D6EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E38B4424618042009D6EB5 /* Assets.xcassets */; };
@@ -64,17 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C757403423F57C6C0060296A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C757403323F57C6C0060296A /* Pods_myDictionary.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C7E38B5C24618044009D6EB5 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +110,7 @@
 		C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
 		C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
+		C7DD5B412461A743002E9286 /* RowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		C7E38B392461803E009D6EB5 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyDictionary WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E38B422461803E009D6EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -142,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C757403223F57C6C0060296A /* Pods_myDictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +255,7 @@
 			children = (
 				C7E38B5024618043009D6EB5 /* InterfaceController.swift */,
 				C7E38B5224618043009D6EB5 /* ExtensionDelegate.swift */,
+				C7DD5B412461A743002E9286 /* RowController.swift */,
 				C7E38B5424618043009D6EB5 /* NotificationController.swift */,
 				C7E38B5624618044009D6EB5 /* Assets.xcassets */,
 				C7E38B5824618044009D6EB5 /* Info.plist */,
@@ -287,7 +276,6 @@
 				C76FDBF523D60701009736CD /* Frameworks */,
 				C76FDBF623D60701009736CD /* Resources */,
 				65F4F6F7DD8C42B9C80EE708 /* [CP] Embed Pods Frameworks */,
-				C757403423F57C6C0060296A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -571,6 +559,7 @@
 			files = (
 				C7E38B5524618043009D6EB5 /* NotificationController.swift in Sources */,
 				C7E38B5324618043009D6EB5 /* ExtensionDelegate.swift in Sources */,
+				C7DD5B422461A743002E9286 /* RowController.swift in Sources */,
 				C7E38B5124618043009D6EB5 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = myDictionary/myDictionary.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -758,8 +748,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.myDictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = tymoshchuk.myDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -772,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = myDictionary/myDictionary.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -782,8 +775,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.myDictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = tymoshchuk.myDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -907,12 +902,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				IBSC_MODULE = MyDictionary_WatchKit_Extension;
 				INFOPLIST_FILE = "MyDictionary WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -926,12 +923,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				IBSC_MODULE = MyDictionary_WatchKit_Extension;
 				INFOPLIST_FILE = "MyDictionary WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -944,6 +943,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = "MyDictionary WatchKit Extension/Info.plist";
@@ -954,6 +954,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -966,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKCHBW3N32;
 				INFOPLIST_FILE = "MyDictionary WatchKit Extension/Info.plist";
@@ -976,6 +978,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
