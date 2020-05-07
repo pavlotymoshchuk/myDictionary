@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70208B524642B6E009F8F10 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */; };
 		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
 		C766254023EDE7EA00314C94 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = C766253F23EDE7EA00314C94 /* File.json */; };
 		C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FDBFB23D60701009736CD /* AppDelegate.swift */; };
@@ -21,7 +22,7 @@
 		C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */; };
 		C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */; };
 		C7DD5B422461A743002E9286 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DD5B412461A743002E9286 /* RowController.swift */; };
-		C7E38B3D2461803E009D6EB5 /* MyDictionary WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C7E38B3D2461803E009D6EB5 /* MyDictionary.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C7E38B3C2461803E009D6EB5 /* MyDictionary.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7E38B432461803E009D6EB5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E38B412461803E009D6EB5 /* Interface.storyboard */; };
 		C7E38B4524618042009D6EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E38B4424618042009D6EB5 /* Assets.xcassets */; };
 		C7E38B4C24618043009D6EB5 /* MyDictionary WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C7E38B4B24618043009D6EB5 /* MyDictionary WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,7 +70,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				C7E38B3D2461803E009D6EB5 /* MyDictionary WatchKit App.app in Embed Watch Content */,
+				C7E38B3D2461803E009D6EB5 /* MyDictionary.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myDictionary.entitlements; sourceTree = "<group>"; };
 		C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C766253F23EDE7EA00314C94 /* File.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = File.json; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 		C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		C7DD5B412461A743002E9286 /* RowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		C7E38B392461803E009D6EB5 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyDictionary WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E38B3C2461803E009D6EB5 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E38B422461803E009D6EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C7E38B4424618042009D6EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7E38B4624618042009D6EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,7 +198,7 @@
 				C76FDC1123D60707009736CD /* myDictionaryTests.xctest */,
 				C76FDC1C23D60707009736CD /* myDictionaryUITests.xctest */,
 				C7E38B392461803E009D6EB5 /* MyDictionary.app */,
-				C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */,
+				C7E38B3C2461803E009D6EB5 /* MyDictionary.app */,
 				C7E38B4B24618043009D6EB5 /* MyDictionary WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -255,6 +257,7 @@
 			children = (
 				C7E38B5024618043009D6EB5 /* InterfaceController.swift */,
 				C7E38B5224618043009D6EB5 /* ExtensionDelegate.swift */,
+				C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */,
 				C7DD5B412461A743002E9286 /* RowController.swift */,
 				C7E38B5424618043009D6EB5 /* NotificationController.swift */,
 				C7E38B5624618044009D6EB5 /* Assets.xcassets */,
@@ -339,9 +342,9 @@
 			productReference = C7E38B392461803E009D6EB5 /* MyDictionary.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
-		C7E38B3B2461803E009D6EB5 /* MyDictionary WatchKit App */ = {
+		C7E38B3B2461803E009D6EB5 /* MyDictionary  */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7E38B6324618044009D6EB5 /* Build configuration list for PBXNativeTarget "MyDictionary WatchKit App" */;
+			buildConfigurationList = C7E38B6324618044009D6EB5 /* Build configuration list for PBXNativeTarget "MyDictionary " */;
 			buildPhases = (
 				C7E38B3A2461803E009D6EB5 /* Resources */,
 				C7E38B5F24618044009D6EB5 /* Embed App Extensions */,
@@ -351,9 +354,9 @@
 			dependencies = (
 				C7E38B4E24618043009D6EB5 /* PBXTargetDependency */,
 			);
-			name = "MyDictionary WatchKit App";
+			name = "MyDictionary ";
 			productName = "MyDictionary WatchKit App";
-			productReference = C7E38B3C2461803E009D6EB5 /* MyDictionary WatchKit App.app */;
+			productReference = C7E38B3C2461803E009D6EB5 /* MyDictionary.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		C7E38B4A24618043009D6EB5 /* MyDictionary WatchKit Extension */ = {
@@ -422,7 +425,7 @@
 				C76FDC1023D60707009736CD /* myDictionaryTests */,
 				C76FDC1B23D60707009736CD /* myDictionaryUITests */,
 				C7E38B382461803E009D6EB5 /* MyDictionary */,
-				C7E38B3B2461803E009D6EB5 /* MyDictionary WatchKit App */,
+				C7E38B3B2461803E009D6EB5 /* MyDictionary  */,
 				C7E38B4A24618043009D6EB5 /* MyDictionary WatchKit Extension */,
 			);
 		};
@@ -561,6 +564,7 @@
 				C7E38B5324618043009D6EB5 /* ExtensionDelegate.swift in Sources */,
 				C7DD5B422461A743002E9286 /* RowController.swift in Sources */,
 				C7E38B5124618043009D6EB5 /* InterfaceController.swift in Sources */,
+				C70208B524642B6E009F8F10 /* DetailInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +583,7 @@
 		};
 		C7E38B3F2461803E009D6EB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C7E38B3B2461803E009D6EB5 /* MyDictionary WatchKit App */;
+			target = C7E38B3B2461803E009D6EB5 /* MyDictionary  */;
 			targetProxy = C7E38B3E2461803E009D6EB5 /* PBXContainerItemProxy */;
 		};
 		C7E38B4E24618043009D6EB5 /* PBXTargetDependency */ = {
@@ -908,13 +912,13 @@
 				IBSC_MODULE = MyDictionary_WatchKit_Extension;
 				INFOPLIST_FILE = "MyDictionary WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyDictionary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -929,13 +933,13 @@
 				IBSC_MODULE = MyDictionary_WatchKit_Extension;
 				INFOPLIST_FILE = "MyDictionary WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "tymoshchuk-Inc.MyDictionary.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyDictionary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -959,7 +963,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -983,7 +987,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -1035,7 +1039,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7E38B6324618044009D6EB5 /* Build configuration list for PBXNativeTarget "MyDictionary WatchKit App" */ = {
+		C7E38B6324618044009D6EB5 /* Build configuration list for PBXNativeTarget "MyDictionary " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7E38B5D24618044009D6EB5 /* Debug */,

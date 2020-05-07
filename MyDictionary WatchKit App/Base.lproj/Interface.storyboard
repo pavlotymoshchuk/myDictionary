@@ -6,10 +6,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
+        <!--DetailInterfaceController-->
+        <scene sceneID="35M-EG-mWw">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="4kO-B1-5lV" customClass="DetailInterfaceController" customModule="MyDictionary_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="eJ2-gV-rVo">
+                            <items>
+                                <label width="1" height="45" alignment="left" text="Num" textAlignment="center" id="K3o-hL-54L"/>
+                                <label width="1" height="45" alignment="left" text="Word" textAlignment="center" numberOfLines="0" id="JrC-3q-g2n"/>
+                                <label width="1" height="60" alignment="left" text="Translate" textAlignment="center" numberOfLines="0" id="ryP-TM-1Yf"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="num" destination="K3o-hL-54L" id="3Yt-R1-xrg"/>
+                        <outlet property="translate" destination="ryP-TM-1Yf" id="QF0-MJ-VtK"/>
+                        <outlet property="word" destination="JrC-3q-g2n" id="1fd-Ol-wgf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.95061728395061" y="73.781725888324871"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyDictionary_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyDictionary" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="eGU-uj-sR4">
                             <items>
@@ -61,14 +83,14 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MyDictionary_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MyDictionary" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="496" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="MyDictionary_WatchKit_App" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="MyDictionary" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="496" y="345"/>
         </scene>

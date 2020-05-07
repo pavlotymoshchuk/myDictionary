@@ -101,7 +101,9 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        pushController(withName: "DetailInterfaceController", context: (wordsArray[rowIndex]))
+    }
     
     
     
