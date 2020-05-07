@@ -76,7 +76,9 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if let data = data {
                     do {
                         wordsArray = try JSONDecoder().decode([Words].self, from: data)
-                        print(wordsArray)
+                        DispatchQueue.main.async {
+                            self.tableWords.reloadData()
+                        }
                     } catch let error {
                         print(error)
                     }
