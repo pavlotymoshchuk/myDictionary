@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E760302559BB8B0035E077 /* RandomWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7602F2559BB8B0035E077 /* RandomWordViewController.swift */; };
 		C70208B524642B6E009F8F10 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */; };
 		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
 		C766254023EDE7EA00314C94 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = C766253F23EDE7EA00314C94 /* File.json */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04E7602F2559BB8B0035E077 /* RandomWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordViewController.swift; sourceTree = "<group>"; };
 		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
@@ -213,9 +215,10 @@
 				C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */,
 				C7B6FC6523E7360400B179C0 /* NewWordViewController.swift */,
 				C7B6FC6323E7325200B179C0 /* SettingsViewController.swift */,
+				04E7602F2559BB8B0035E077 /* RandomWordViewController.swift */,
 				C76FDC0123D60701009736CD /* Main.storyboard */,
-				C76FDC0923D60706009736CD /* LaunchScreen.storyboard */,
 				C76FDC0723D60706009736CD /* Assets.xcassets */,
+				C76FDC0923D60706009736CD /* LaunchScreen.storyboard */,
 				C76FDC0C23D60706009736CD /* Info.plist */,
 				C76FDC0423D60701009736CD /* myDictionary.xcdatamodeld */,
 				C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */,
@@ -535,6 +538,7 @@
 				C7D6311E23EB5AEC005C2161 /* WordsViewController.swift in Sources */,
 				C76FDBFC23D60701009736CD /* AppDelegate.swift in Sources */,
 				C7B6FC6623E7360400B179C0 /* NewWordViewController.swift in Sources */,
+				04E760302559BB8B0035E077 /* RandomWordViewController.swift in Sources */,
 				C76FDBFE23D60701009736CD /* SceneDelegate.swift in Sources */,
 				C7B6FC6423E7325200B179C0 /* SettingsViewController.swift in Sources */,
 			);

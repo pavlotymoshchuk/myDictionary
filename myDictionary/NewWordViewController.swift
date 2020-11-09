@@ -35,9 +35,14 @@ class NewWordViewController: UIViewController,UITextFieldDelegate
         return jsonString
     }
 
-
     @IBOutlet weak var  newWordTextField: UITextField!
     @IBOutlet weak var  newTranslateTextField: UITextField!
+    
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

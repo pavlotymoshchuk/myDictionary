@@ -9,8 +9,7 @@
 import UIKit
 import UserNotifications
 
-class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
+class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableWords: UITableView!
     
@@ -18,23 +17,20 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var refresh = UIRefreshControl()
     
     
-    @objc func handleRefresh()
-    {
+    @objc func handleRefresh() {
         gettingJSON()
         self.tableWords.reloadData()
         refresh.endRefreshing()
     }
     
     //MARK: - Notification
-    func scheduleNotification(notificationRepeat: TimeInterval)
-    {
+    func scheduleNotification(notificationRepeat: TimeInterval) {
         removeNotification(withIdent: ["Massage"])
         
         let content = UNMutableNotificationContent()
         content.title = "Learn new word"
         var randomWord = Words()
-        repeat
-        {
+        repeat {
             randomWord = wordsArray.randomElement()!
         }
         while randomWord.studied
@@ -53,22 +49,19 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         center.add(request, withCompletionHandler: nil)
     }
     
-    func removeNotification (withIdent ident: [String])
-    {
+    func removeNotification (withIdent ident: [String]) {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: ident)
     }
     
-    deinit
-    {
+    deinit {
         removeNotification(withIdent: ["Massage"])
     }
     
     
     
     //MARK: - Отримання JSON
-    func gettingJSON()
-    {
+    func gettingJSON() {
         let urlString = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) {
@@ -88,18 +81,14 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //MARK: - Перестворення JSON
-    func creatingJSON()
-    {
+    func creatingJSON() {
         var jsonString = ""
         jsonString += "[" + "\n"
-        if wordsArray.count > 0
-        {
-        for i in 0 ..< wordsArray.count
-            {
+        if wordsArray.count > 0 {
+        for i in 0 ..< wordsArray.count {
                 jsonString += "{" + "\n" + "\u{0022}" + "word" + "\u{0022}" + ":" + "\u{0022}" + wordsArray[i].word + "\u{0022}" + "," + "\n"
                 jsonString += "\u{0022}" + "translate" + "\u{0022}" + ":" + "["
-                for j in 0 ..< wordsArray[i].translate.count
-                {
+                for j in 0 ..< wordsArray[i].translate.count {
                     jsonString += "\u{0022}" + wordsArray[i].translate[j] + "\u{0022}" + ","
                 }
                 jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
@@ -115,33 +104,42 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     
-    @IBAction func newWordButton(_ sender: UIButton)
-    {
+    @IBAction func newWordButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "NewWordViewController")
         self.present(vc, animated: true, completion: nil)
     }
-    @IBAction func settingsButton(_ sender: UIButton)
-    {
+    
+    @IBAction func settingsButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func randomWord(_ sender: UIButton)
-    {
+    //MARK: - Alert with random word
+    func alertWithRandomWord() {
         let showRandomWord = UIAlertController()
         showRandomWord.title = "Random word:"
-        var randomWord = Words()
+        var randomUnstudiedWord = Words()
         repeat
         {
-            randomWord = wordsArray.randomElement()!
+            randomUnstudiedWord = wordsArray.randomElement()!
         }
-        while randomWord.studied
-        showRandomWord.message = randomWord.word + " - " + randomWord.translate[0]
+        while randomUnstudiedWord.studied
+        showRandomWord.message = randomUnstudiedWord.word + " - " + randomUnstudiedWord.translate[0]
         let action = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in }
         showRandomWord.addAction(action)
-        self.present(showRandomWord, animated: true, completion: nil)
+        print(showRandomWord.message)
+        present(showRandomWord, animated: true, completion: nil)
+    }
+    
+    @IBAction func randomWord(_ sender: UIButton) {
+//        alertWithRandomWord()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RandomWordViewController")
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     
