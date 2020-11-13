@@ -59,16 +59,16 @@ class RandomWordViewController: UIViewController {
         if #available(iOS 12.0, *) {
             if self.traitCollection.userInterfaceStyle == .dark {
                 randomTranslatesButton.setTitleColor(.white, for: .normal)
-                randomTranslatesButton.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+                randomTranslatesButton.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
                 randomTranslatesButton.layer.borderColor = UIColor.white.cgColor
             } else {
                 randomTranslatesButton.setTitleColor(.black, for: .normal)
-                randomTranslatesButton.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
+                randomTranslatesButton.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
                 randomTranslatesButton.layer.borderColor = UIColor.black.cgColor
             }
         } else {
             randomTranslatesButton.setTitleColor(.black, for: .normal)
-            randomTranslatesButton.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
+            randomTranslatesButton.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
             randomTranslatesButton.layer.borderColor = UIColor.black.cgColor
         }
         
@@ -115,8 +115,17 @@ class RandomWordViewController: UIViewController {
         }
     }
     
-    @IBAction func doneButton(_ sender: Any) {
+    @IBAction func closeButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        for i in randomTranslatesButtonsArray {
+            i.removeFromSuperview()
+        }
+        randomTranslatesButtonsArray.removeAll()
+        translatesArray.removeAll()
+        addFunctionality()
     }
     
 }
