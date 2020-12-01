@@ -9,9 +9,20 @@
 import UIKit
 import UserNotifications
 
-class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     @IBOutlet weak var tableWords: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredWords = [Words]()
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     //MARK: - Refresh
     var refresh = UIRefreshControl()
@@ -150,6 +161,16 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         gettingJSON()
         refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         tableWords.addSubview(refresh)
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        if #available(iOS 11.0, *) {
+            self.tableWords.tableHeaderView = self.searchController.searchBar
+        }
+        definesPresentationContext = true
+        
     }
     
     // MARK: - Sorting Words Array
@@ -194,7 +215,13 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             sortingWordsArray(sortParam: sortParam)
             print("Notification created")
         }
-        return wordsArray.count
+        //MARK: - Filtering
+        if isFiltering {
+            return filteredWords.count
+        } else {
+            return wordsArray.count
+        }
+        
     }
 
     // MARK: - Заповнення рядків
@@ -202,7 +229,14 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? TableViewCell
         {
-            let item = wordsArray[indexPath.row]
+            //MARK: - Filtering
+            let item: Words
+            if isFiltering {
+                item = filteredWords[indexPath.row]
+            } else {
+                item = wordsArray[indexPath.row]
+            }
+//            let item = wordsArray[indexPath.row]
             cell.wordLabel?.text = item.word
             cell.translateLabel?.text = item.translate[0]
             cell.numberLabel?.text = String(indexPath.row+1)
@@ -217,6 +251,18 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
         return UITableViewCell()
+    }
+    
+    //MARK: - SearchResults
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredWords = wordsArray.filter({ (word: Words) -> Bool in
+            return word.translate[0].lowercased().contains(searchText.lowercased()) || word.word.lowercased().contains(searchText.lowercased())
+        })
+        tableWords.reloadData()
     }
 
 }
