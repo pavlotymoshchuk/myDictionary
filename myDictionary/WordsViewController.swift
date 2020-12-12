@@ -132,21 +132,18 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let showRandomWord = UIAlertController()
         showRandomWord.title = "Random word:"
         var randomUnstudiedWord = Words()
-        repeat
-        {
+        repeat {
             randomUnstudiedWord = wordsArray.randomElement()!
         }
         while randomUnstudiedWord.studied
         showRandomWord.message = randomUnstudiedWord.word + " - " + randomUnstudiedWord.translate[0]
         let action = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in }
         showRandomWord.addAction(action)
-        print(showRandomWord.message)
         present(showRandomWord, animated: true, completion: nil)
     }
     
     @IBAction func randomWord(_ sender: UIButton) {
 //        alertWithRandomWord()
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RandomWordViewController")
         self.present(vc, animated: true, completion: nil)
@@ -178,19 +175,14 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         var unknownWordsArray: [Words] = []
         var knownWordsArray: [Words] = []
-        for i in wordsArray
-        {
-            if i.studied && i.word.count != 0
-            {
+        for i in wordsArray {
+            if i.studied && i.word.count != 0 {
                 knownWordsArray.append(i)
-            }
-            else if i.word.count != 0
-            {
+            } else if i.word.count != 0 {
                 unknownWordsArray.append(i)
             }
         }
-        switch sortParam
-        {
+        switch sortParam {
         case 0:
             wordsArray = unknownWordsArray.sorted {$0.word < $1.word} + knownWordsArray.sorted {$0.word < $1.word}
         case 1:
@@ -205,15 +197,12 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if wordsArray.count > 0
-        {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if wordsArray.count > 0 {
             //MARK: - Notification
             self.scheduleNotification(notificationRepeat: 10)
             // MARK: - Sorting By
             sortingWordsArray(sortParam: sortParam)
-            print("Notification created")
         }
         //MARK: - Filtering
         if isFiltering {
@@ -221,14 +210,11 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             return wordsArray.count
         }
-        
     }
 
     // MARK: - Заповнення рядків
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? TableViewCell
-        {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? TableViewCell {
             //MARK: - Filtering
             let item: Words
             if isFiltering {
@@ -240,12 +226,9 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.wordLabel?.text = item.word
             cell.translateLabel?.text = item.translate[0]
             cell.numberLabel?.text = String(indexPath.row+1)
-            if item.studied
-            {
+            if item.studied {
                 cell.numberLabel?.textColor = UIColor.green
-            }
-            else
-            {
+            } else {
                 cell.numberLabel?.textColor = UIColor.red
             }
             return cell
