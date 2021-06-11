@@ -66,22 +66,34 @@ class InterfaceController: WKInterfaceController {
     }
     
     func loadWordsFromJSON() {
-        let urlString = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
-            if let url = URL(string: urlString) {
-                URLSession.shared.dataTask(with: url) {
-                    data, response, error in
-                    if let data = data {
-                        do {
-                            wordsArray = try JSONDecoder().decode([Words].self, from: data)
-                            sortingWordsArray(sortParam: sortParam)
-                            print(wordsArray)
-                            self.loadTable()
-                        } catch let error {
-                            print(error)
-                        }
-                    }
-                }.resume()
+//        let urlString = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
+//            if let url = URL(string: urlString) {
+//                URLSession.shared.dataTask(with: url) {
+//                    data, response, error in
+//                    if let data = data {
+//                        do {
+//                            wordsArray = try JSONDecoder().decode([Words].self, from: data)
+//                            sortingWordsArray(sortParam: sortParam)
+//                            print(wordsArray)
+//                            self.loadTable()
+//                        } catch let error {
+//                            print(error)
+//                        }
+//                    }
+//                }.resume()
+//            }
+        if let path = Bundle.main.path(forResource: "File", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                wordsArray = try JSONDecoder().decode([Words].self, from: data)
+                sortingWordsArray(sortParam: sortParam)
+                self.loadTable()
+            } catch let error {
+                print("error: \(error.localizedDescription)")
             }
+        } else {
+            print("Invalid filename/path.")
+        }
     }
     
     override func awake(withContext context: Any?) {

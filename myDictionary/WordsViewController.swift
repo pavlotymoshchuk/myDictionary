@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 import UserNotifications
 
 class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
@@ -73,47 +74,17 @@ class WordsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: - Отримання JSON
     func gettingJSON() {
-        let urlString = "http://pavlo-tymoshchuk-inc.right-k-left.com/wordsArray.json"
-        if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) {
-                data, response, error in
-                if let data = data {
-                    do {
-                        wordsArray = try JSONDecoder().decode([Words].self, from: data)
-                        DispatchQueue.main.async {
-                            self.tableWords.reloadData()
-                        }
-                    } catch let error {
-                        print(error)
-                    }
-                }
-            }.resume()
-        }
-    }
-    
-    //MARK: - Перестворення JSON
-    func creatingJSON() {
-        var jsonString = ""
-        jsonString += "[" + "\n"
-        if wordsArray.count > 0 {
-        for i in 0 ..< wordsArray.count {
-                jsonString += "{" + "\n" + "\u{0022}" + "word" + "\u{0022}" + ":" + "\u{0022}" + wordsArray[i].word + "\u{0022}" + "," + "\n"
-                jsonString += "\u{0022}" + "translate" + "\u{0022}" + ":" + "["
-                for j in 0 ..< wordsArray[i].translate.count {
-                    jsonString += "\u{0022}" + wordsArray[i].translate[j] + "\u{0022}" + ","
-                }
-                jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-                jsonString += "]" + "," + "\n"
-                jsonString += "\u{0022}" + "studied" + "\u{0022}" + ":" + String(wordsArray[i].studied) + "\n" + "}" + "," + "\n"
+        if let path = Bundle.main.path(forResource: "File", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                wordsArray = try JSONDecoder().decode([Words].self, from: data)
+            } catch let error {
+                print("error: \(error.localizedDescription)")
             }
-        }
-        jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-        jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
-        jsonString += "\n" + "]"
-        print(jsonString)
+        } else {
+            print("Invalid filename/path.")
+        }        
     }
-
-    
     
     @IBAction func newWordButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

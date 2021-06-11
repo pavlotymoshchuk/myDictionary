@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D3D52625F2F9B800985EC4 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D3D52525F2F9B800985EC4 /* File.json */; };
 		04E760302559BB8B0035E077 /* RandomWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7602F2559BB8B0035E077 /* RandomWordViewController.swift */; };
 		C70208B524642B6E009F8F10 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */; };
 		C7146ADE23DCC72B0021CA6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7146ADD23DCC72B0021CA6E /* TableViewCell.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04D3D52525F2F9B800985EC4 /* File.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = File.json; sourceTree = "<group>"; };
 		04E7602F2559BB8B0035E077 /* RandomWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordViewController.swift; sourceTree = "<group>"; };
 		21B6019E12FCC2B3F88279D2 /* Pods-myDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDictionary.release.xcconfig"; path = "Target Support Files/Pods-myDictionary/Pods-myDictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C2E7949C622B635D74E810CC /* Pods_myDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 		C76FDBFA23D60701009736CD /* myDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				C766253F23EDE7EA00314C94 /* File.json */,
 				C76FDBFB23D60701009736CD /* AppDelegate.swift */,
 				C76FDBFD23D60701009736CD /* SceneDelegate.swift */,
 				C7D6311D23EB5AEC005C2161 /* WordsViewController.swift */,
@@ -222,7 +225,6 @@
 				C76FDC0C23D60706009736CD /* Info.plist */,
 				C76FDC0423D60701009736CD /* myDictionary.xcdatamodeld */,
 				C712FEDB23DCC31F00AB513A /* myDictionary.entitlements */,
-				C766253F23EDE7EA00314C94 /* File.json */,
 			);
 			path = myDictionary;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 		C7E38B4F24618043009D6EB5 /* MyDictionary WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				04D3D52525F2F9B800985EC4 /* File.json */,
 				C7E38B5024618043009D6EB5 /* InterfaceController.swift */,
 				C7E38B5224618043009D6EB5 /* ExtensionDelegate.swift */,
 				C70208B424642B6E009F8F10 /* DetailInterfaceController.swift */,
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E38B5724618044009D6EB5 /* Assets.xcassets in Resources */,
+				04D3D52625F2F9B800985EC4 /* File.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
